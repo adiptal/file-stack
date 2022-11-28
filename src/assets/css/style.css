@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+::selection {
+    color: #FCFCFC;
+    background: #E03616;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+.bg-custom{
+    background: #E03616;
+}
+
+.hide-overflow{
+    overflow: hidden;
+}
+
+.modal input{
+    background: transparent;
+    color: #6B676D !important;
+    border-radius: 0;
+    border: none;
+    box-shadow: inset 0 0 1px 1px #858287;
+}
+
+.modal input:focus{
+    background: transparent;
+    outline: none;
+    box-shadow: inset 0 0 2px 1px #E03616 !important;
+}
+
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                        PROGRESS AND STATUs MODAL
+----------------------------------------------------------------------------------------------------
+*/
+
+#upload_notification{
+    position: fixed;
+    bottom: 1em;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+#upload_notification .card{
+    border: 0;
+    border-radius: 0;
+    box-shadow: 1px 2px 5px 1px #4E4B50;
+}
+
+#upload_notification .card-header{
+    padding-top: 1.5em;
+    background: transparent;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #6B676D;
+    border: none;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                        END PROGRESS AND STATUs MODAL
+----------------------------------------------------------------------------------------------------
+*/
+
+#uploading_status,
+#share_user_file_name{
+    max-height: 200px;
+    font-size: 1em;
+    color: #6B676D;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 1em;
+    overflow-y:auto;
+}
+
+.overlayer{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.5);
+    z-index: 50;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                                NAVBAR
+----------------------------------------------------------------------------------------------------
+*/
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    background: #353535;
+    border-top: solid .25em #E03616;
+    box-shadow: 0 0 .5em #353535;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+
+.navbar h1{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 1.25em;
+    color: #FCFCFC;
+    letter-spacing: 2px;
+    padding: .5em 1em;
+    margin: 0;
+    position: relative;
+    left: 2em;
+    transition: all .25s;
+}
+
+.navbar .social-links{
+    position: absolute;
+    right: 3em;
+    top: .35em;
+    color: #FCFCFC;
+    font-size: 1.25em;
+}
+
+.navbar .social-links li{
+    padding: 0 .3em;
+    border-radius: 1em;
+    transition: all .25s;
+}
+
+.navbar .social-links li:hover{
+    box-shadow: 0 0 0 5px #4E4B50;
+    background: #4E4B50;
+}
+
+.navbar .social-links li input{
+    font-size: .7em;
+    font-weight: 500;
+    text-align: right;
+    color: #E03616;
+    padding: .3em 1.5em;
+    width: 150px;
+    border: none;
+    border-radius: 5em;
+    transition: all .25s;
+    margin: 0;
+    position: relative;
+    top: -.2em;
+}
+
+.navbar .social-links li input:focus{
+    outline: none;
+    width: 250px;
+}
+
+.navbar .social-links li.no-shadow:hover{
+    box-shadow: 0 0 0 0 transparent;
+    background: transparent;
+}
+
+.navbar .btn-bar{
+    color: #A09EA2;
+    position: absolute;
+    left: 1em;
+    padding: .2em .4em .15em;
+    border-radius: 1em;
+}
+
+.navbar .nav-drop .btn{
+    color: #FCFCFC;
+    border-radius: 1em;
+    padding: .2em .4em .15em;
+    margin-right: .5em;
+}
+
+.drop-down{
+    border-top: solid .3em #E03616;
+    display: none;
+    background: #eaeaea;
+    width: 150px;
+    padding: .75em 0 0;
+    margin: 0;
+    position: fixed;
+    top: 3em;
+    font-weight: 500;
+    color: #6B676D;
+}
+
+.drop-down::after{
+    content: '';
+    position: absolute;
+    top: -.75em;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: .9em solid transparent;
+    border-bottom: .8em solid #eaeaea;
+}
+  
+.navbar .drop-down li{
+    cursor: pointer;
+    padding: .25em 1em;
+    transition: all .25s;
+}
+
+.navbar .drop-down li a{
+    display: block;
+    width: 150px;
+    position: relative;
+    left: -1em;
+    padding-left: 1em;
+}
+
+.navbar .drop-down li:hover,
+.navbar .drop-down li:active{
+    background: #E03616;
+    color: #FCFCFC;
+}
+
+.navbar .drop-down li:active{
+    box-shadow: inset 0 0 0 3px #6B676D;
+}
+
+.navbar .btn-bar:hover,
+.navbar .btn-bar:focus,
+.navbar .nav-drop .btn:hover,
+.navbar .nav-drop .btn:focus{
+    box-shadow: 0 0 0 5px #4E4B50;
+    background: #4E4B50;
+    color: #FCFCFC;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            END NAVBAR
+----------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            SIDEBAR
+----------------------------------------------------------------------------------------------------
+*/
+
+.sidebar{
+    width: 20%;
+    background: #FFFFFF;
+    height: 96%;
+    position: fixed;
+    bottom: 0;
+    left: -110%;
+    z-index: 90;
+    box-shadow: inset -3px 0 #eaeaea;
+    transition: all .25s;
+    overflow: auto;
+}
+
+.sidebar.show{
+    left: 0;
+}
+
+@media(max-width:499px)
+{
+    .sidebar{
+        width: 90%;
+    }
+}
+
+@media(min-width:500px) and (max-width:767px)
+{
+    .sidebar{
+        width: 45%;
+    }
+}
+
+@media(min-width:768px) and (max-width:1199px)
+{
+    .sidebar{
+        width: 35%;
+        height: 97%;
+    }
+}
+
+.sidebar ul{
+    margin-top: 3em;
+}
+
+.sidebar ul li{
+    transition: all .2s;
+}
+
+.sidebar ul li a:before{
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 2em;
+    color: #6B676D;
+}
+
+.sidebar ul li:hover{
+    background: #eaeaea;
+    border-radius: 0 2em 2em 0;
+}
+
+.sidebar ul li.active{
+    background: #f9cac1;
+    border-radius: 0 2em 2em 0;
+}
+
+.sidebar ul li.active a{
+    color: #E03616;
+}
+
+.sidebar ul li a{
+    padding: .75em 1em;
+    font-size: .85em;
+    font-weight: 600;
+    color: #6B676D;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar .login-form{
+    width: 75%;
+    margin: 2.5em auto 1em;
+}
+
+.sidebar .login-form input , .sidebar .login-form button{
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.sidebar .login-form button{
+    background: #353535;
+    color: #FCFCFC;
+    border-radius: 0;
+    transition: all .25s;
+    display: block;
+}
+
+.sidebar .login-form button:hover,
+.sidebar .login-form button:focus{
+    outline: none;
+    box-shadow: 0 0 0 5px #A09EA2;
+}
+
+.sidebar .login-form input{
+    background: transparent;
+    color: #6B676D !important;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 6px 0px -5px #858287;
+}
+
+.sidebar .login-form input:focus{
+    background: transparent;
+    outline: none;
+    box-shadow: 0 6px 0px -5px #E03616;
+}
+
+.sidebar .login-form .signup-link{
+    margin: .25em .8em .75em;
+    color: #E03616;
+    transition: all .15s;
+    display: inline-block;
+}
+
+/* .sidebar .login-form .signup-link:link, */
+.sidebar .login-form .signup-link:visited,
+.sidebar .login-form .signup-link:hover,
+.sidebar .login-form .signup-link:focus,
+.sidebar .login-form .signup-link:active{
+    outline: none;
+    text-decoration: none;
+    background: #eaeaea;
+    box-shadow: 0 0 0 .5em #eaeaea;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            END SIDEBAR
+----------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            INTRO BG
+----------------------------------------------------------------------------------------------------
+*/
+
+html , body , .main-box , .intro-bg{
+    height: 100%;
+}
+
+.intro-bg{
+    background-image: url(../../images/intro-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: solid .5em #A09EA2;
+}
+
+@media(max-width:1024px)
+{
+    .intro-bg{
+        background-image: url(../../images/intro-bg-mobile.jpg);
+    }
+}
+
+.intro-bg .btn{
+    position: absolute;
+    bottom: 2.5em;
+    right: 2.5em;
+    border-radius: 5em;
+    border: 0;
+    background: #D6D5D7;
+    color: #353535;
+    padding: .5em .6em .25em;
+    transition: all .25s;
+}
+
+.intro-bg .btn:hover,
+.intro-bg .btn:focus{
+    outline: none;
+    box-shadow: 0 0 .5em 2px #E03616;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            END INTRO BG
+----------------------------------------------------------------------------------------------------
+*/
+
+
+.section-header h2{
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FCFCFC;
+    margin: 2em auto 3em;
+    padding: .5em 0 1em;
+    width: 92%;
+    background: #353535;
+    box-shadow: -.25em -.4em #E03616;
+}
+
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                            OUR COMMUNITY
+----------------------------------------------------------------------------------------------------
+*/
+
+@media(min-width: 768px)
+{
+    .section-header h2{
+        width: 50%;
+    }
+}
+
+@media(min-width: 992px)
+{
+    #our-community{
+        background: linear-gradient(180deg, rgba(255,255,255,1) 75%, rgba(224,54,22,1) 75%);
+    }
+}
+
+@media(max-width: 992px)
+{
+    #our-community{
+        box-shadow: inset 0 -2.5em 0 #E03616;
+    }
+}
+    #our-community{
+        padding-bottom: 3em;
+        border-bottom: solid .5em #A09EA2;
+    }
+
+#our-community .card-box{
+    border-top: solid .5em #E03616;
+    box-shadow: 2px 2px 5px #6B676D;
+    background: #FCFCFC;
+    padding: 0 0 1em;
+    font-weight: 500;
+    color: #858287;
+    transition: all .25s;
+}
+
+#our-community .col-lg-4{
+    margin-bottom: 2.5em;
+}
+
+
+@media(min-width: 992px)
+{
+    #our-community .card-box:hover{
+        margin-top: -.5em;
+        box-shadow: 2px 2px 10px #6B676D;
+    }
+}
+
+#our-community .card-box .card-bg{
+    margin-top: 1.5em;
+    height: 185px;
+}
+
+#our-community .card-box .bg-1{
+    background: url(../../images/card-bg1.png) center center no-repeat;
+    background-size: contain;
+}
+
+#our-community .card-box .bg-2{
+    background: url(../../images/card-bg2.png) center center no-repeat;
+    background-size: contain;
+}
+
+#our-community .card-box .bg-3{
+    background: url(../../images/card-bg3.png) center center no-repeat;
+    background-size: contain;
+}
+
+#our-community .card-box .card-header{
+    padding-top: 1.5em;
+    background: transparent;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #6B676D;
+    border: none;
+}
+
+#our-community .card-box button{
+    padding: 0 .35em;
+    border-radius: 1em;
+    margin-top: -2.5em;
+    margin-right: 1em;
+}
+
+#our-community .card-box button:hover{
+    box-shadow: 0 0 0 5px #A09EA2;
+    background: #D6D5D7;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                        END OUR COMMUNITY
+----------------------------------------------------------------------------------------------------
+*/
+
+
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                        CONTAINER BOX
+----------------------------------------------------------------------------------------------------
+*/
+
+.container-box{
+    height: 100%;
+    width: 100%;
+    float: right;
+    clear: both;
+}
+
+.container-box .nav-breadcrumbs{
+    border-bottom: solid 2px #eaeaea;
+    padding: 0 1em;
+    margin-top: 5em;
+}
+
+.container-box .nav-breadcrumbs li , .container-box .nav-breadcrumbs button{
+    color: #6B676D;
+    font-size: .85em;
+    font-weight: 500;
+    margin-bottom: .5em;
+    border-radius: 1em;
+    padding: .3em .25em;
+    transition: all .15s;
+    cursor: pointer;
+}
+
+.container-box .nav-breadcrumbs button{
+    padding: 0 .15em;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.container-box .nav-breadcrumbs li:not(:last-child)::after{
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-left: 1em;
+}
+
+.container-box .nav-breadcrumbs li:last-child::after{
+    content: '\f0d7';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-left: 1em;
+}
+
+.container-box .nav-breadcrumbs li:hover , .container-box .nav-breadcrumbs button:hover
+{
+    background: #eaeaea;
+    box-shadow: 0 0 0 .5em #eaeaea;
+}
+
+.container-box #folder .card,
+.container-box #file .card{
+    font-size: .8em;
+    font-weight: 700;
+    color: #6B676D;
+    user-select: none;
+    cursor: pointer;
+}
+
+.container-box #folder .card:hover,
+.container-box #file .card:hover{
+    background: #f9f9f9;
+}
+
+.container-box .active{
+    background: #eaeaea !important;
+}
+
+/* 
+----------------------------------------------------------------------------------------------------
+                                        END CONTAINER BOX
+----------------------------------------------------------------------------------------------------
+*/
